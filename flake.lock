@@ -256,21 +256,7 @@
         "gotohp": "gotohp",
         "mosaic-wm": "mosaic-wm",
         "mtsync": "mtsync",
-        "nixpkgs": "nixpkgs",
-        "serein": "serein"
-      }
-    },
-    "serein": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1789431336,
-        "narHash": "sha256-P8m8fED0ixJ+JkouTudTOWQ9LOJy0yrdNz/NwmGlQcw=",
-        "type": "tarball",
-        "url": "https://github.com/ViceVerse-cz/Serein/releases/download/v1.0.0-nightly.20260915.22/serein-v1.0.0-nightly.20260915.22-Linux-arch-serein-1.0.0pre.nightly.20260915.22-1-x86_64.pkg.tar.zst"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://github.com/ViceVerse-cz/Serein/releases/download/v1.0.0-nightly.20260915.22/serein-v1.0.0-nightly.20260915.22-Linux-arch-serein-1.0.0pre.nightly.20260915.22-1-x86_64.pkg.tar.zst"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
