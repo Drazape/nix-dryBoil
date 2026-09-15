@@ -76,7 +76,7 @@
 					(builtins.mapAttrs (name: value: lib.callPackageWith { inherit pkgs lib inputs; } value {}) {
 						bibata-material-cursors = ./packages/bibata-material-cursors;
 						chromaleon-gnome-extension = ./packages/ChromaLeon.nix;
-						mtsync = ./packages/MtSync.nix;
+						mtsync = ./packages/mtsync.nix;
 						gnome-improved-media-controls = ./packages/gnome-improved-media-controls.nix;
 						gotohp = ./packages/gotohp.nix;
 						mosaic-wm-gnome-extension = ./packages/mosaic-wm.nix;

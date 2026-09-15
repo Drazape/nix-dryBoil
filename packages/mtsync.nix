@@ -6,13 +6,13 @@
 	buildInputs = with pkgs; [ gtkmm4 libadwaita libsoup_3 glib cairo stdenvNoCC.cc.cc.lib ];
 	
 	unpackPhase = ''
-			dpkg --extract -- $src ./tree/
-			cd ./tree/usr/
+		dpkg --extract -- $src ./tree/
+		cd ./tree/usr/
 	'';
 	
 	installPhase = ''
-			mkdir -p $out/
-			mv ./bin/ ./share/ $out/
+		mkdir -p $out/
+		mv ./bin/ ./share/ $out/
 	'';
 
 	postInstall = ''wrapProgram $out/bin/mtsync --prefix PATH : ${pkgs.rclone}/bin'';
