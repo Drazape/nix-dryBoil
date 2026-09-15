@@ -39,6 +39,104 @@
         "url": "https://github.com/Fabito02/ChromaLeon/releases/latest/download/user-accent-colors@fabito02.shell-extension.zip"
       }
     },
+    "fish-format": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789399915,
+        "narHash": "sha256-cQQQbewkmnabvh7O0VYdvN7Mj7eewOg7KET76j14v2E=",
+        "owner": "Drazape",
+        "repo": "fish-format",
+        "rev": "f92bfb3397758bd8a332fd8f4e3c35443cb20de3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Drazape",
+        "repo": "fish-format",
+        "type": "github"
+      }
+    },
+    "fish-helpText": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789399920,
+        "narHash": "sha256-txFs5CXTpGnNGQsXClblw2o5HSX2CqEh4U9s4rP8doU=",
+        "owner": "Drazape",
+        "repo": "fish-helpText",
+        "rev": "fd521ca89642bba8cf404ab6b690126bb2c9b825",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Drazape",
+        "repo": "fish-helpText",
+        "type": "github"
+      }
+    },
+    "fish-nixenv": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789399926,
+        "narHash": "sha256-VYhqNCWwSTy8iqRNxoDH0epKlxmLdrXYEhiT8T8Q55w=",
+        "owner": "Drazape",
+        "repo": "fish-nixenv",
+        "rev": "65f5ad6284264c10928ea2650203af5f87829c06",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Drazape",
+        "repo": "fish-nixenv",
+        "type": "github"
+      }
+    },
+    "fish-subAbbr": {
+      "inputs": {
+        "fish-format": [
+          "fish-format"
+        ],
+        "fish-helpText": [
+          "fish-helpText"
+        ],
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789400370,
+        "narHash": "sha256-Ja8CRWPdvdfMyW5+ns2lOg52r3IHHWm0Md8mWpOp984=",
+        "owner": "Drazape",
+        "repo": "fish-subAbbr",
+        "rev": "78ca77a8e69790c587d9adb09543c8a7b51f236a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Drazape",
+        "repo": "fish-subAbbr",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -149,6 +247,10 @@
         "bibata-material-cursors-Dark": "bibata-material-cursors-Dark",
         "bibata-material-cursors-Light": "bibata-material-cursors-Light",
         "chromaleon": "chromaleon",
+        "fish-format": "fish-format",
+        "fish-helpText": "fish-helpText",
+        "fish-nixenv": "fish-nixenv",
+        "fish-subAbbr": "fish-subAbbr",
         "flake-parts": "flake-parts",
         "gnome-improved-media-controls": "gnome-improved-media-controls",
         "gotohp": "gotohp",
