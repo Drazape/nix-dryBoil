@@ -26,6 +26,19 @@
         "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.3.0/bibata-material-light-v1.3.0.tar.gz"
       }
     },
+    "chromaleon": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789324102,
+        "narHash": "sha256-yoD1jY7MdbK4rIXaXDA41t6NTx9QZc41KGPIz5sfXA8=",
+        "type": "tarball",
+        "url": "https://github.com/Fabito02/ChromaLeon/releases/latest/download/user-accent-colors@fabito02.shell-extension.zip"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/Fabito02/ChromaLeon/releases/latest/download/user-accent-colors@fabito02.shell-extension.zip"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -42,6 +55,62 @@
         "owner": "hercules-ci",
         "repo": "flake-parts",
         "type": "github"
+      }
+    },
+    "gnome-improved-media-controls": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789132713,
+        "narHash": "sha256-cvH+FcyfNNUu5fJBnjmn/KNwUtozm5zN1o++Rb5055o=",
+        "owner": "m-obeid",
+        "repo": "gnome-improved-media-controls",
+        "rev": "9a07c8e10efec399bf902c2c9c45ef28f757a8b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "m-obeid",
+        "repo": "gnome-improved-media-controls",
+        "type": "github"
+      }
+    },
+    "gotohp": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-rXiSh9RAm6g1nVgfOrA9EaSG/WTrwq35NH0qoOwlc4A=",
+        "type": "file",
+        "url": "https://github.com/xob0t/gotohp/releases/latest/download/gotohp_amd64.deb"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/xob0t/gotohp/releases/latest/download/gotohp_amd64.deb"
+      }
+    },
+    "mosaic-wm": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789396120,
+        "narHash": "sha256-pdrcJfcazKqnkxLOwp3nqPDPmpM/azv1SobOpqMKrpU=",
+        "owner": "CleoMenezesJr",
+        "repo": "MosaicWM",
+        "rev": "af8faa38ed213a50d478dc38a781daf1ebeb829a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "CleoMenezesJr",
+        "repo": "MosaicWM",
+        "type": "github"
+      }
+    },
+    "mtsync": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-2QJmT0Chwml8XvqoPUsTmIj1Y1ObkYULy8KyIDwhm+Q=",
+        "type": "file",
+        "url": "https://github.com/gavindi/MtSync/releases/download/0.9.17/mtsync_0.9.17_ubuntu26.04_x86_64.deb"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/gavindi/MtSync/releases/download/0.9.17/mtsync_0.9.17_ubuntu26.04_x86_64.deb"
       }
     },
     "nixpkgs": {
@@ -79,7 +148,12 @@
       "inputs": {
         "bibata-material-cursors-Dark": "bibata-material-cursors-Dark",
         "bibata-material-cursors-Light": "bibata-material-cursors-Light",
+        "chromaleon": "chromaleon",
         "flake-parts": "flake-parts",
+        "gnome-improved-media-controls": "gnome-improved-media-controls",
+        "gotohp": "gotohp",
+        "mosaic-wm": "mosaic-wm",
+        "mtsync": "mtsync",
         "nixpkgs": "nixpkgs"
       }
     }
