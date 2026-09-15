@@ -49,11 +49,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789399915,
-        "narHash": "sha256-cQQQbewkmnabvh7O0VYdvN7Mj7eewOg7KET76j14v2E=",
+        "lastModified": 1789731491,
+        "narHash": "sha256-1DWOHAIITJKYJIutOJhkrS19zOei6SooXblsfqSmeh4=",
         "owner": "Drazape",
         "repo": "fish-format",
-        "rev": "f92bfb3397758bd8a332fd8f4e3c35443cb20de3",
+        "rev": "4f33c3b1865fccea514135897f4cf30f20a98af0",
         "type": "github"
       },
       "original": {
@@ -72,11 +72,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789399920,
-        "narHash": "sha256-txFs5CXTpGnNGQsXClblw2o5HSX2CqEh4U9s4rP8doU=",
+        "lastModified": 1789481168,
+        "narHash": "sha256-IJH11HRoYl0M7I4mQLH0nACJQPKYLL3j9gZn8MAqCF4=",
         "owner": "Drazape",
         "repo": "fish-helpText",
-        "rev": "fd521ca89642bba8cf404ab6b690126bb2c9b825",
+        "rev": "b76a27e0acf8df6afc96409ae6497e87d01b3a9b",
         "type": "github"
       },
       "original": {
@@ -95,11 +95,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789399926,
-        "narHash": "sha256-VYhqNCWwSTy8iqRNxoDH0epKlxmLdrXYEhiT8T8Q55w=",
+        "lastModified": 1789481186,
+        "narHash": "sha256-osmXJjPmz+8orMl5tX306W8eLagg//PkRSrXUnHH9MU=",
         "owner": "Drazape",
         "repo": "fish-nixenv",
-        "rev": "65f5ad6284264c10928ea2650203af5f87829c06",
+        "rev": "c3f31ff6ac61c14e3fcbb5771c28ece982ee4798",
         "type": "github"
       },
       "original": {
@@ -124,11 +124,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789400370,
-        "narHash": "sha256-Ja8CRWPdvdfMyW5+ns2lOg52r3IHHWm0Md8mWpOp984=",
+        "lastModified": 1789631904,
+        "narHash": "sha256-tPTX4E9Xyup6XPl+U4C0TqKV8zE1NZtjqJB5CojpNRQ=",
         "owner": "Drazape",
         "repo": "fish-subAbbr",
-        "rev": "78ca77a8e69790c587d9adb09543c8a7b51f236a",
+        "rev": "3d0567717dfa75ee558c34b850ce3f5bda0f4ce5",
         "type": "github"
       },
       "original": {
@@ -199,25 +199,13 @@
         "type": "github"
       }
     },
-    "mtsync": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-2QJmT0Chwml8XvqoPUsTmIj1Y1ObkYULy8KyIDwhm+Q=",
-        "type": "file",
-        "url": "https://github.com/gavindi/MtSync/releases/download/0.9.17/mtsync_0.9.17_ubuntu26.04_x86_64.deb"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/gavindi/MtSync/releases/download/0.9.17/mtsync_0.9.17_ubuntu26.04_x86_64.deb"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1789370336,
-        "narHash": "sha256-6RSEDHIWQtesQKWSu5qRai8L2h4KgCgMEfJHstW99G4=",
+        "lastModified": 1789632929,
+        "narHash": "sha256-RjR8AyvGlWuw16XRj7C1YDEw4E27ciuyPeB2nDMzgTU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c7def046b9a883d46974757852106483d741586f",
+        "rev": "a32edd7654519351e48e80372a928df336394670",
         "type": "github"
       },
       "original": {
@@ -255,7 +243,6 @@
         "gnome-improved-media-controls": "gnome-improved-media-controls",
         "gotohp": "gotohp",
         "mosaic-wm": "mosaic-wm",
-        "mtsync": "mtsync",
         "nixpkgs": "nixpkgs"
       }
     }
