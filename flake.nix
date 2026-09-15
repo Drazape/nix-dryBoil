@@ -74,7 +74,7 @@
 				packages =
 					# defined
 					(builtins.mapAttrs (name: value: lib.callPackageWith { inherit pkgs lib inputs; } value {}) {
-						bibata-material-cursors = ./packages/bibata-material-cursors.nix;
+						bibata-material-cursors = ./packages/bibata-material-cursors;
 						chromaleon-gnome-extension = ./packages/ChromaLeon.nix;
 						mtsync = ./packages/MtSync.nix;
 						gnome-improved-media-controls = ./packages/gnome-improved-media-controls.nix;
