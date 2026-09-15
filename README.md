@@ -1,12 +1,12 @@
-Nix flake for the binary package of the [Bibata Material Cursors](https://github.com/SakibShahariar/material-bibata-cursor/ "28 Bibata cursor themes, colored using Material Design 3's tonal system") cursor pack.
+dryBoil mono-repo with practical packages and modules
 
 # Installation Instructions
 1. Add the input to your `flake.nix`
 ```nix
 inputs = {
 	…
-	bibata-material-cursors = {
-		type="github"; owner="drazape"; repo="bibata-material-flake";
+	dryboil = {
+		type="github"; owner="drazape"; repo="dryBoil";
 		inputs.nixpkgs.follows = "nixpkgs"; # optional
 	};
 	…
@@ -14,33 +14,13 @@ inputs = {
 …
 ```
 
-2. Simply install the `default` package in your system environment from the added input in a module.
+2. Simply install the package you want to install in your system environment from the added input in a module.
 ```nix
 environment.systemPackages = [
 	…
-	inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default
+	inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.<packageName>
 	…
 ];
 ```
 
-# Package Overrides
-## Theme Selection
-You can select the theme the package installs (`Dark`, `Light`) using the `theme` override
-> [!NOTE]
-> **Default**: `Light`
-```diff
-- inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default
-+ (inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default.override {theme="Dark";})
-```
-## Limiting Variants
-By default, the package installs all the [cursor variants](https://github.com/SakibShahariar/material-bibata-cursor#themes "Preview of custom variants").  
-You can select which cursor variants to install by specifying the [variant names](./pkg.nix#L6 "A list of variant names from the pkg source") with the override option `variants`  
-```diff
-- inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default
-+ (inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default.override {variants=[<variants>];})
-```
 
-# Internal Working
-1. The flake gets the pre-build cursors from the release assets by using the URL in the `inputs`
-2. It uses [*flake-parts*](https://flake.parts/) to declare the package for Linux
-3. It uses the standard environment from *Nixpkgs* to make a derivation
