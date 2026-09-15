@@ -34,20 +34,60 @@
 			url = "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.3.0/bibata-material-dark-v1.3.0.tar.gz";
 			flake = false;
 		};
+
+		fish-subAbbr = {
+			type="github"; owner="Drazape"; repo="fish-subAbbr";
+			inputs = {
+				nixpkgs.follows = "nixpkgs";
+				flake-parts.follows = "flake-parts";
+				fish-helpText.follows = "fish-helpText";
+				fish-format.follows = "fish-format";
+			};
+		};
+		fish-nixenv = {
+			type="github"; owner="Drazape"; repo="fish-nixenv";
+			inputs = {
+				nixpkgs.follows = "nixpkgs";
+				flake-parts.follows = "flake-parts";
+			};
+		};
+		fish-helpText = {
+			type="github"; owner="Drazape"; repo="fish-helpText";
+			inputs = {
+				nixpkgs.follows = "nixpkgs";
+				flake-parts.follows = "flake-parts";
+			};
+		};
+		fish-format = {
+			type="github"; owner="Drazape"; repo="fish-format";
+			inputs = {
+				nixpkgs.follows = "nixpkgs";
+				flake-parts.follows = "flake-parts";
+			};
+		};
 	};
 
 	outputs = inputs@{ flake-parts, ... }:
 		flake-parts.lib.mkFlake { inherit inputs; } {
 			systems = [ "x86_64-linux" "aarch64-linux" ];
-			perSystem = { pkgs, lib, ... }: {
-				packages = builtins.mapAttrs (name: value: lib.callPackageWith { inherit pkgs lib inputs; } value {}) {
-					bibata-material-cursors = ./packages/bibata-material-cursors.nix;
-					chromaleon-gnome-extension = ./packages/ChromaLeon.nix;
-					mtsync = ./packages/MtSync.nix;
-					gnome-improved-media-controls = ./packages/gnome-improved-media-controls.nix;
-					gotohp = ./packages/gotohp.nix;
-					mosaic-wm-gnome-extension = ./packages/mosaic-wm.nix;
-				};
+			perSystem = { inputs', pkgs, lib, ... }: {
+				packages =
+					# defined
+					(builtins.mapAttrs (name: value: lib.callPackageWith { inherit pkgs lib inputs; } value {}) {
+						bibata-material-cursors = ./packages/bibata-material-cursors.nix;
+						chromaleon-gnome-extension = ./packages/ChromaLeon.nix;
+						mtsync = ./packages/MtSync.nix;
+						gnome-improved-media-controls = ./packages/gnome-improved-media-controls.nix;
+						gotohp = ./packages/gotohp.nix;
+						mosaic-wm-gnome-extension = ./packages/mosaic-wm.nix;
+					})
+					# external
+					// {
+						inherit (inputs'.fish-subAbbr.packages) fish-subAbbr;
+						inherit (inputs'.fish-nixenv.packages) fish-nixenv;
+						inherit (inputs'.fish-helpText.packages) fish-helpText;
+						inherit (inputs'.fish-format.packages) fish-format;
+					};
 			};
 		};
 }		 
