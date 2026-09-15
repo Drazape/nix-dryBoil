@@ -9,10 +9,6 @@
 			url = "https://github.com/Fabito02/ChromaLeon/releases/latest/download/user-accent-colors@fabito02.shell-extension.zip";
 			flake = false;
 		};
-		mtsync = {
-			url = "https://github.com/gavindi/MtSync/releases/download/0.9.17/mtsync_0.9.17_ubuntu26.04_x86_64.deb";
-			flake = false;
-		};
 		gnome-improved-media-controls = {
 			type="github"; owner="m-obeid"; repo="gnome-improved-media-controls";
 			flake = false;
@@ -76,7 +72,6 @@
 					(builtins.mapAttrs (name: value: lib.callPackageWith { inherit pkgs lib inputs; } value {}) {
 						bibata-material-cursors = ./packages/bibata-material-cursors;
 						chromaleon-gnome-extension = ./packages/ChromaLeon.nix;
-						mtsync = ./packages/mtsync.nix;
 						gnome-improved-media-controls = ./packages/gnome-improved-media-controls.nix;
 						gotohp = ./packages/gotohp.nix;
 						mosaic-wm-gnome-extension = ./packages/mosaic-wm.nix;
