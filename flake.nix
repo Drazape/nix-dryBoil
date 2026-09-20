@@ -9,6 +9,11 @@
 			url = "https://github.com/Fabito02/ChromaLeon/releases/latest/download/user-accent-colors@fabito02.shell-extension.zip";
 			flake = false;
 		};
+		chromaleon-preload = {
+			type = "github"; owner="Fabito02"; repo="chromaleon-preload";
+			flake = false;
+		};
+
 		gnome-improved-media-controls = {
 			type="github"; owner="m-obeid"; repo="gnome-improved-media-controls";
 			flake = false;
