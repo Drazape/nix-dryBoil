@@ -29,14 +29,30 @@
     "chromaleon": {
       "flake": false,
       "locked": {
-        "lastModified": 1789324102,
-        "narHash": "sha256-yoD1jY7MdbK4rIXaXDA41t6NTx9QZc41KGPIz5sfXA8=",
+        "lastModified": 1790832885,
+        "narHash": "sha256-NNnnUdCwN1cuay6JUmnXFsu+NrxcZOSDtdjVQCi7brw=",
         "type": "tarball",
         "url": "https://github.com/Fabito02/ChromaLeon/releases/latest/download/user-accent-colors@fabito02.shell-extension.zip"
       },
       "original": {
         "type": "tarball",
         "url": "https://github.com/Fabito02/ChromaLeon/releases/latest/download/user-accent-colors@fabito02.shell-extension.zip"
+      }
+    },
+    "chromaleon-preload": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790814003,
+        "narHash": "sha256-s4LiUdGtZIc55bGgnStgtCDKOG+dUe6hOL1C5QPfY+A=",
+        "owner": "Fabito02",
+        "repo": "chromaleon-preload",
+        "rev": "e40efa0b308743f6eb51b23f66dd6e3ec6031521",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Fabito02",
+        "repo": "chromaleon-preload",
+        "type": "github"
       }
     },
     "fish-format": {
@@ -49,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789731491,
-        "narHash": "sha256-1DWOHAIITJKYJIutOJhkrS19zOei6SooXblsfqSmeh4=",
+        "lastModified": 1790486861,
+        "narHash": "sha256-z+VmeTXE1h57NIDvfwrUkTK6PpQIci+FNFR/1MaEsK4=",
         "owner": "Drazape",
         "repo": "fish-format",
-        "rev": "4f33c3b1865fccea514135897f4cf30f20a98af0",
+        "rev": "2f31bf305b649f1550c9542461f336edc9311d45",
         "type": "github"
       },
       "original": {
@@ -72,11 +88,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789481168,
-        "narHash": "sha256-IJH11HRoYl0M7I4mQLH0nACJQPKYLL3j9gZn8MAqCF4=",
+        "lastModified": 1790486889,
+        "narHash": "sha256-I788tCmH7ml0aqtr9EbsPQ1CuAsWFtArRDkdb2jarAU=",
         "owner": "Drazape",
         "repo": "fish-helpText",
-        "rev": "b76a27e0acf8df6afc96409ae6497e87d01b3a9b",
+        "rev": "21e0e602ae61722d689cefd24c905c8aef19afc6",
         "type": "github"
       },
       "original": {
@@ -95,11 +111,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789481186,
-        "narHash": "sha256-osmXJjPmz+8orMl5tX306W8eLagg//PkRSrXUnHH9MU=",
+        "lastModified": 1790486904,
+        "narHash": "sha256-f6MwGw9x7EXDQEXTMrnYuO5hSKx1ztkU+0qJTuNFoGM=",
         "owner": "Drazape",
         "repo": "fish-nixenv",
-        "rev": "c3f31ff6ac61c14e3fcbb5771c28ece982ee4798",
+        "rev": "a96d0ad14a755b7fa5b30e8c43e1b02011864c9b",
         "type": "github"
       },
       "original": {
@@ -124,11 +140,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789631904,
-        "narHash": "sha256-tPTX4E9Xyup6XPl+U4C0TqKV8zE1NZtjqJB5CojpNRQ=",
+        "lastModified": 1790671772,
+        "narHash": "sha256-pIVqurnmoVuyTNKrzTMKPAeyh6pgmlmPvEe72NvFG7Q=",
         "owner": "Drazape",
         "repo": "fish-subAbbr",
-        "rev": "3d0567717dfa75ee558c34b850ce3f5bda0f4ce5",
+        "rev": "e4e5990101983bdfca819dc9e30d711e8d92600c",
         "type": "github"
       },
       "original": {
@@ -186,11 +202,11 @@
     "mosaic-wm": {
       "flake": false,
       "locked": {
-        "lastModified": 1789396120,
-        "narHash": "sha256-pdrcJfcazKqnkxLOwp3nqPDPmpM/azv1SobOpqMKrpU=",
+        "lastModified": 1790825801,
+        "narHash": "sha256-IDRe2bGM9pCp5xeFgX945YgXnlxpYiGciHO+YZ5kU6M=",
         "owner": "CleoMenezesJr",
         "repo": "MosaicWM",
-        "rev": "af8faa38ed213a50d478dc38a781daf1ebeb829a",
+        "rev": "2054f9b42f4ad51a70cce91ab3491bb979ab0d69",
         "type": "github"
       },
       "original": {
@@ -201,11 +217,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1789632929,
-        "narHash": "sha256-RjR8AyvGlWuw16XRj7C1YDEw4E27ciuyPeB2nDMzgTU=",
+        "lastModified": 1790652569,
+        "narHash": "sha256-641r7xrlSOHYoktL9/aArPIYNgZJ9eM5URzSEOtPJDY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a32edd7654519351e48e80372a928df336394670",
+        "rev": "b6c8664de9b6cc07fe5666a29f91884ba81197c4",
         "type": "github"
       },
       "original": {
@@ -235,6 +251,7 @@
         "bibata-material-cursors-Dark": "bibata-material-cursors-Dark",
         "bibata-material-cursors-Light": "bibata-material-cursors-Light",
         "chromaleon": "chromaleon",
+        "chromaleon-preload": "chromaleon-preload",
         "fish-format": "fish-format",
         "fish-helpText": "fish-helpText",
         "fish-nixenv": "fish-nixenv",
