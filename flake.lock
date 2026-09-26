@@ -111,11 +111,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790176615,
-        "narHash": "sha256-J5LzBOzl42GfxoZKEuWp/W1p8HINTODSjM0FacMN7ro=",
+        "lastModified": 1790407106,
+        "narHash": "sha256-D10BWGh0xXofBi4Q3KY1Rkm8GTBWGMfmtchbGDxrkVk=",
         "owner": "Drazape",
         "repo": "fish-nixenv",
-        "rev": "53b4f4149612e1d9d32c6b9d59a84577e32ecd7e",
+        "rev": "52915d09c32989840bdc9db8295fc2e48b355d19",
         "type": "github"
       },
       "original": {
