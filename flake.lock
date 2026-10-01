@@ -29,8 +29,8 @@
     "chromaleon": {
       "flake": false,
       "locked": {
-        "lastModified": 1790832885,
-        "narHash": "sha256-NNnnUdCwN1cuay6JUmnXFsu+NrxcZOSDtdjVQCi7brw=",
+        "lastModified": 1790888539,
+        "narHash": "sha256-eS4hGhn0jSK4BDovf71m8PWtnA5QwOuLRSOb5jkpafU=",
         "type": "tarball",
         "url": "https://github.com/Fabito02/ChromaLeon/releases/latest/download/user-accent-colors@fabito02.shell-extension.zip"
       },
