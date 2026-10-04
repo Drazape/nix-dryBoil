@@ -202,11 +202,11 @@
     "mosaic-wm": {
       "flake": false,
       "locked": {
-        "lastModified": 1790956916,
-        "narHash": "sha256-zjFHPfh06Hty6L7dWFvygpg1Hu8iFgQN+PTHLu6FU+0=",
+        "lastModified": 1791078518,
+        "narHash": "sha256-s/VXLHad/cFaBUW4D/luVxfynSg2I0RWGPVNhOXAjzc=",
         "owner": "CleoMenezesJr",
         "repo": "MosaicWM",
-        "rev": "c3c31710aa3066c642ebdb4bc0f959b2ce6bcffe",
+        "rev": "a508c6ad93165eecb0bde6153188001a4754fffb",
         "type": "github"
       },
       "original": {
