@@ -2,6 +2,7 @@
 	inputs,
 	pkgs,
 	lib,
+	format ? ["standard"],
 	variants ? [
 		"Apricot"
 		"Beige"
@@ -37,11 +38,24 @@
 		name = "bibata-material-cursors";
 		src = inputs.${"bibata-material-cursors-"+theme};
 
+		configurePhase = builtins.concatStringsSep "\n" <| lib.attrsets.mapAttrsToList
+				(formatName: fileNames: ''
+						if ${if builtins.elem formatName format
+								then "false"
+								else "true"}
+						then ${lib.meta.getExe' pkgs.coreutils "rm"} --recursive --force -- ./Bibata-Material-*-${theme}/{${builtins.concatStringsSep "," fileNames}}
+						fi
+					'')
+				{
+					standard = [ "cursors" "index.theme" ];
+					hypr = [ "hyprcursors" "manifest.hl" ];
+				};
+
 		installPhase = ''
 			install_path=$out/share/icons/
-			${lib.getExe' pkgs.coreutils "mkdir"} --parents -- $install_path
+			${lib.meta.getExe' pkgs.coreutils "mkdir"} --parents -- $install_path
 			for variant in ${builtins.concatStringsSep " " variants}
-				do ${lib.getExe' pkgs.coreutils "cp"} --recursive -- $src/Bibata-Material-$variant-${theme}/ $install_path
+				do ${lib.meta.getExe' pkgs.coreutils "cp"} --recursive -- ./Bibata-Material-$variant-${theme}/ $install_path
 			done
 		'';
 
