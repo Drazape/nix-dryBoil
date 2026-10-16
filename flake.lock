@@ -3,27 +3,27 @@
     "bibata-material-cursors-Dark": {
       "flake": false,
       "locked": {
-        "lastModified": 1787114969,
-        "narHash": "sha256-iVWEzRndGfhvRQEEeCczQZi3KJ+9DYxNpIqn+wEGfSo=",
+        "lastModified": 1790087868,
+        "narHash": "sha256-qRZIG2wGEo6Qvg9+99QSyLKmCfHGsl3DpblF7/+cH4Y=",
         "type": "tarball",
-        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.3.0/bibata-material-dark-v1.3.0.tar.gz"
+        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.3.0/bibata-material-dark-v1.3.0.tar.gz"
+        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz"
       }
     },
     "bibata-material-cursors-Light": {
       "flake": false,
       "locked": {
-        "lastModified": 1787114981,
-        "narHash": "sha256-9O+xhGFASrpabkKrks/KxbacxHUMT7GDVoSJ4E+m3nw=",
+        "lastModified": 1790087891,
+        "narHash": "sha256-eb9rBKE4lIqET4a7VgHxDqWHJy064+qdVVanaQAMTic=",
         "type": "tarball",
-        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.3.0/bibata-material-light-v1.3.0.tar.gz"
+        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-light-v1.5.0.tar.gz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.3.0/bibata-material-light-v1.3.0.tar.gz"
+        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-light-v1.5.0.tar.gz"
       }
     },
     "chromaleon": {
@@ -140,11 +140,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792128095,
-        "narHash": "sha256-kt8OK0TnIv00JjXdaj1xPINHm0ziHQ3mMEn3/9/3mH8=",
+        "lastModified": 1792142050,
+        "narHash": "sha256-tNexFwx65KiRRjeNYn/yWy7VfG+KhpJrTP5/3fxRUZQ=",
         "owner": "Drazape",
         "repo": "fish-subAbbr",
-        "rev": "fae19307bcb2540a385273405cae1ca798053c4d",
+        "rev": "cdfd0103eb0862c56a0894050ecfc66fe238cf53",
         "type": "github"
       },
       "original": {
