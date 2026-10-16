@@ -28,11 +28,11 @@
 		};
 
 		bibata-material-cursors-Light = {
-			url = "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.3.0/bibata-material-light-v1.3.0.tar.gz";
+			url = "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-light-v1.5.0.tar.gz";
 			flake = false;
 		};
 		bibata-material-cursors-Dark = {
-			url = "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.3.0/bibata-material-dark-v1.3.0.tar.gz";
+			url = "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz";
 			flake = false;
 		};
 
