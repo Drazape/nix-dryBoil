@@ -35,6 +35,10 @@
 			url = "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz";
 			flake = false;
 		};
+		fish-hashmap = {
+			type="github"; owner="JoelTowell"; repo="hashmap.fish";
+			flake = false;
+		};
 
 		fish-subAbbr = {
 			type="github"; owner="Drazape"; repo="fish-subAbbr";
@@ -80,6 +84,7 @@
 						gnome-improved-media-controls = ./packages/gnome-improved-media-controls.nix;
 						gotohp = ./packages/gotohp.nix;
 						mosaic-wm-gnome-extension = ./packages/mosaic-wm.nix;
+						fish-hashmap = ./packages/fish-hashmap.nix;
 					})
 					# external
 					// {
