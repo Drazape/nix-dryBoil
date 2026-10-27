@@ -13,8 +13,8 @@ in {
 	'';
 
 	installPhase = ''
-		mkdir -p $out/
-		mv ./local/bin/ ./share/ $out/
+		${lib.getExe' pkgs.coreutils "mkdir"} --parents -- $out/
+		${lib.getExe' pkgs.coreutils "mv"} -- ./local/bin/ ./share/ $out/
 
 		patchelf --set-rpath "${lib.makeLibraryPath runtimeLibs}" $out/bin/gotohp # Work around a patchelf 0.19.2 regression. autoPatchelfHook first sets the interpreter and then the RUNPATH; on this Go binary the second rewrite leaves the PHDR outside of any LOAD segment, which makes the kernel/dynamic loader segfault before main() runs. Doing the RUNPATH rewrite first produces a valid layout, and the hook can then safely refresh it.
 	'';
