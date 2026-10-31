@@ -40,8 +40,8 @@
 			flake = false;
 		};
 
-		fish-subAbbr = {
-			type="github"; owner="Drazape"; repo="fish-subAbbr";
+		fish-awabbre = {
+			type="github"; owner="Drazape"; repo="fish-awabbre";
 			inputs = {
 				nixpkgs.follows = "nixpkgs";
 				flake-parts.follows = "flake-parts";
@@ -88,7 +88,7 @@
 					})
 					# external
 					// {
-						inherit (inputs'.fish-subAbbr.packages) fish-subAbbr;
+						inherit (inputs'.fish-awabbre.packages) fish-awabbre;
 						inherit (inputs'.fish-nixenv.packages) fish-nixenv;
 						inherit (inputs'.fish-helpText.packages) fish-helpText;
 						inherit (inputs'.fish-format.packages) fish-format;
