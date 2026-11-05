@@ -1,35 +1,19 @@
-name: update-flake-inputs
+# REF: https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/automate-dependabot-with-actions#enabling-automerge-on-a-pull-request
 
-on:
-  schedule:
-    - cron: "0 11 * * *"
-  workflow_dispatch:
+name: Dependabot auto-merge
+on: pull_request
 
 permissions:
   contents: write
-
-concurrency:
-  group: update-flake-inputs-latest
-  cancel-in-progress: false
+  pull-requests: write
 
 jobs:
-  update:
+  dependabot:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'Drazape/nix-dryBoil'
     steps:
-      - name: Update flake inputs
-        id: flake
-        uses: Drazape/commit-flake-inputs@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          target_branch: alpha
-          commit_message: "chore(flake): ops: update inputs"
-          flake_directory: "."
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
-          git_user_name: "Drazape"
-          git_user_email: "Drazape@outlook.com"
-
-      - name: Show result
-        run: |
-          echo "changed: ${{ steps.flake.outputs.changed }}"
-          echo "commit: ${{ steps.flake.outputs.commit_sha }}"
+      - name: Enable auto-merge for Dependabot PRs
+        run: gh pr merge --auto --squash -- "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
