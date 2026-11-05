@@ -1,0 +1,22 @@
+version: 2
+updates:
+  # REF: https://docs.github.com/en/code-security/supply-chain-security/keeping-your-actions-up-to-date-with-dependabot
+  - package-ecosystem: "github-actions"
+    target-branch: "alpha"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+
+  # keep static bookmark `alpha` always up-to-date
+  - package-ecosystem: "nix"
+    target-branch: "alpha"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "11:00"
+    cooldown:
+      default-days: 0
+    groups:
+      nix:
+        patterns:
+          - "*"

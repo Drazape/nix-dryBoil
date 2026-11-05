@@ -1,0 +1,19 @@
+# REF: https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/automate-dependabot-with-actions#enabling-automerge-on-a-pull-request
+
+name: auto-merge Dependabot into `alpha`
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'Drazape/nix-dryBoil'
+    steps:
+      - name: Squash merge Dependabot PRs so they're signed
+        run: gh pr merge --auto --squash -- "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
