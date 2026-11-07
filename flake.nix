@@ -70,6 +70,13 @@
 				flake-parts.follows = "flake-parts";
 			};
 		};
+		fish-lock-buffer = {
+			type="github"; owner="Drazape"; repo="fish-lock-buffer";
+			inputs = {
+				nixpkgs.follows = "nixpkgs";
+				flake-parts.follows = "flake-parts";
+			};
+		};
 	};
 
 	outputs = inputs@{ flake-parts, ... }:
@@ -92,6 +99,7 @@
 						inherit (inputs'.fish-nixenv.packages) fish-nixenv;
 						inherit (inputs'.fish-helpText.packages) fish-helpText;
 						inherit (inputs'.fish-format.packages) fish-format;
+						inherit (inputs'.fish-lock-buffer.packages) fish-lock-buffer;
 					};
 			};
 		};
