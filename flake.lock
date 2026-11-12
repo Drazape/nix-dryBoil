@@ -285,6 +285,38 @@
         "type": "github"
       }
     },
+    "nvidia-470xx": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791999956,
+        "narHash": "sha256-EYXRS8MBJ1ogBn+/to+fOHM3NbSAyJmPstoB4iG101U=",
+        "owner": "haxllo",
+        "repo": "nvidia-470xx-linux-7.0",
+        "rev": "c2ec8c7393b3d6d1be3f179843abef2b9c0ac571",
+        "type": "github"
+      },
+      "original": {
+        "owner": "haxllo",
+        "repo": "nvidia-470xx-linux-7.0",
+        "type": "github"
+      }
+    },
+    "nvidia-470xx-upstream-patches": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794440206,
+        "narHash": "sha256-EsL2Q1veW0NVGqsTjQbbV3lJ0j+Dvo5OW1tjFJ2SCoU=",
+        "owner": "joanbm",
+        "repo": "nvidia-470xx-linux-mainline",
+        "rev": "94fbc71b07deb5b400a3307cbc0268baa48fd198",
+        "type": "github"
+      },
+      "original": {
+        "owner": "joanbm",
+        "repo": "nvidia-470xx-linux-mainline",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "bibata-material-cursors-Dark": "bibata-material-cursors-Dark",
@@ -301,7 +333,9 @@
         "gnome-improved-media-controls": "gnome-improved-media-controls",
         "gotohp": "gotohp",
         "mosaic-wm": "mosaic-wm",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nvidia-470xx": "nvidia-470xx",
+        "nvidia-470xx-upstream-patches": "nvidia-470xx-upstream-patches"
       }
     }
   },
