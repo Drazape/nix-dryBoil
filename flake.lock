@@ -71,11 +71,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794220781,
-        "narHash": "sha256-8LcMtsjIhyqxqXp+pVjps7UqtW47rPl052kgDFo2mjI=",
+        "lastModified": 1794466528,
+        "narHash": "sha256-JSZvK8lVSynhll5utz/1pVvQmukh0aXFutFLF1HvR80=",
         "owner": "Drazape",
         "repo": "fish-awabbre",
-        "rev": "2dd093f52e403cec5a4b2a5a5173a0712cec1357",
+        "rev": "4900363866d603aed061c54137ff47973a95df56",
         "type": "github"
       },
       "original": {
@@ -256,11 +256,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1793977579,
-        "narHash": "sha256-WrSODdZFVIs/Hh2NzC0bY+ROByi0bATg8WfePX8dPj8=",
+        "lastModified": 1794285365,
+        "narHash": "sha256-wZbTou+ANeUoN7ojuMBOPU9D4qMZ96MLxcDp2BzmIUY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4fe25e12eb9f4c744966dd3de5a05246cf098601",
+        "rev": "9ac0edc06bfb33e6c0000be79d98ef8d89e26503",
         "type": "github"
       },
       "original": {
