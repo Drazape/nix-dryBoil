@@ -5,6 +5,16 @@
 		flake-parts = { type="github"; owner="hercules-ci"; repo="flake-parts"; };
 		nixpkgs = { type="github"; owner="NixOS"; repo="nixpkgs"; ref="nixpkgs-unstable"; };
 
+
+		nvidia-470xx = { # Kepler (470) kernel-compatibility patches
+			type = "github"; owner="haxllo"; repo="nvidia-470xx-linux-7.0";
+			flake = false;
+		};
+		nvidia-470xx-upstream-patches = {
+			type="github"; owner="joanbm"; repo="nvidia-470xx-linux-mainline";
+			flake = false;
+		};
+
 		chromaleon = {
 			url = "https://github.com/Fabito02/ChromaLeon/releases/latest/download/user-accent-colors@fabito02.shell-extension.zip";
 			flake = false;
@@ -92,6 +102,7 @@
 						gotohp = ./packages/gotohp.nix;
 						mosaic-wm-gnome-extension = ./packages/mosaic-wm.nix;
 						fish-hashmap = ./packages/fish-hashmap.nix;
+						nvidia-470-driver = ./packages/nvidia-470-driver.nix;
 					})
 					# external
 					// {
