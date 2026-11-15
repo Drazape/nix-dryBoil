@@ -7,7 +7,7 @@ updates:
     schedule:
       interval: "monthly"
 
-  # keep static bookmark `alpha` always up-to-date
+  # keep static bookmark `alpha` always up-to-date for flake reference
   - package-ecosystem: "nix"
     target-branch: "alpha"
     directory: "/"
