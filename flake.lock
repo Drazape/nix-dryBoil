@@ -71,11 +71,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794564527,
-        "narHash": "sha256-lUgyggVuAIJ7hdrIc3hQS8XFO+l+KYBrpUjOUNmqfVA=",
+        "lastModified": 1794909551,
+        "narHash": "sha256-pclPvVd6y3S1FEEnhk8v57H+YXuvBIk09zmQo5aOh/o=",
         "owner": "Drazape",
         "repo": "fish-awabbre",
-        "rev": "e273f31dab55d1c837b0a9d89c4cc5693fe647b4",
+        "rev": "c6ff3c1118ccd3a546b3b21fec0b7453347ee2c5",
         "type": "github"
       },
       "original": {
@@ -241,11 +241,11 @@
     "mosaic-wm": {
       "flake": false,
       "locked": {
-        "lastModified": 1793991616,
-        "narHash": "sha256-PxdqSZfzz+FFseOMIGFpTMKluP60jXfM/1cDpgCuSnU=",
+        "lastModified": 1794846592,
+        "narHash": "sha256-TNEEEPkUJyfbULkaxJ4Gf+h/AESM1IDjW4YuuH40YiI=",
         "owner": "CleoMenezesJr",
         "repo": "MosaicWM",
-        "rev": "db885f37744f8f427848f2f42237f8a77adff7a3",
+        "rev": "b3792e579b22217c3e14fd04e5f258fad8f09e6e",
         "type": "github"
       },
       "original": {
@@ -256,11 +256,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1794644783,
-        "narHash": "sha256-3GnIGIy15bMduoS9RnWqKTmsJLWThla42UFtm0S7+us=",
+        "lastModified": 1794705614,
+        "narHash": "sha256-DZ5eNWHA6heAHwkMt1SBtF1p8Lfgi4ivqdqmgxUZkLs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5d2b81a7a3be3e2f832879028e4d60abbf58e9a0",
+        "rev": "1c872b8c508bbbfebc1b0b74777ff391ce0a574c",
         "type": "github"
       },
       "original": {
