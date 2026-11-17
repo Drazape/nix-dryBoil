@@ -94,11 +94,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794827202,
-        "narHash": "sha256-Znae+3iGFvA++JjakB7leOBc/4hRhkKITPqbR9eIKOc=",
+        "lastModified": 1794903607,
+        "narHash": "sha256-hyPn2GimCjsoIS2+dwnOSCtXrY/aIFtpyX5nVXQNiT8=",
         "owner": "Drazape",
         "repo": "fish-format",
-        "rev": "4591a2bd4628b951c9f5c10df6db9930c9b2a73f",
+        "rev": "2c8999e22732f33bfc6ae95ea28226c1e2189cdb",
         "type": "github"
       },
       "original": {
