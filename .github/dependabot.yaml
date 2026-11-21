@@ -5,7 +5,7 @@ updates:
     target-branch: "alpha"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "monthly" # workflows use moving refs (major version tags, branches); as such, they rarely need to be updated.
 
   # keep static bookmark `alpha` always up-to-date for flake reference
   - package-ecosystem: "nix"
