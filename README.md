@@ -1,5 +1,8 @@
 dryBoil mono-repo with practical packages and modules
 
+> [!NOTE]
+> The repository is currently in alpha
+
 # Installation Instructions
 1. Add the input to your `flake.nix`
 ```nix
