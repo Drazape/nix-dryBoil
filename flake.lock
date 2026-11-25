@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "bibata-material-cursors-Dark": {
+    "material-bibata-cursor-Dark": {
       "flake": false,
       "locked": {
         "lastModified": 1790087868,
@@ -13,7 +13,7 @@
         "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz"
       }
     },
-    "bibata-material-cursors-Light": {
+    "material-bibata-cursor-Light": {
       "flake": false,
       "locked": {
         "lastModified": 1790087891,
@@ -319,8 +319,8 @@
     },
     "root": {
       "inputs": {
-        "bibata-material-cursors-Dark": "bibata-material-cursors-Dark",
-        "bibata-material-cursors-Light": "bibata-material-cursors-Light",
+        "material-bibata-cursor-Dark": "material-bibata-cursor-Dark",
+        "material-bibata-cursor-Light": "material-bibata-cursor-Light",
         "chromaleon": "chromaleon",
         "chromaleon-preload": "chromaleon-preload",
         "fish-awabbre": "fish-awabbre",

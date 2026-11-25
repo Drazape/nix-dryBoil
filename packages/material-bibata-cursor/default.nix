@@ -35,8 +35,8 @@
 	],
 	theme ? "Light",
 	... }: pkgs.stdenvNoCC.mkDerivation {
-		name = "bibata-material-cursors";
-		src = inputs.${"bibata-material-cursors-"+theme};
+		name = "material-bibata-cursor";
+		src = inputs.${"material-bibata-cursor-"+theme};
 
 		configurePhase = builtins.concatStringsSep "\n" <| lib.attrsets.mapAttrsToList
 				(formatName: fileNames: ''
@@ -61,7 +61,7 @@
 
 		meta = {
 			description = "28 Bibata cursor themes, colored using Material Design 3's tonal system";
-			homepage = "https://github.com/SakibShahariar/bibata-material-cursors";
+			homepage = "https://github.com/SakibShahariar/material-bibata-cursor";
 			license = lib.licenses.gpl3;
 			platforms = lib.platforms.linux;
 		};

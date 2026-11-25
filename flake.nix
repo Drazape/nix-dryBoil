@@ -37,11 +37,11 @@
 			flake = false;
 		};
 
-		bibata-material-cursors-Light = {
+		material-bibata-cursor-Light = {
 			url = "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-light-v1.5.0.tar.gz";
 			flake = false;
 		};
-		bibata-material-cursors-Dark = {
+		material-bibata-cursor-Dark = {
 			url = "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz";
 			flake = false;
 		};
@@ -96,7 +96,7 @@
 				packages =
 					# defined
 					(builtins.mapAttrs (name: value: lib.callPackageWith { inherit pkgs lib inputs; } value {}) {
-						bibata-material-cursor = ./packages/bibata-material-cursor;
+						material-bibata-cursor = ./packages/material-bibata-cursor;
 						chromaleon-gnome-extension = ./packages/ChromaLeon.nix;
 						gnome-improved-media-controls = ./packages/gnome-improved-media-controls.nix;
 						gotohp = ./packages/gotohp.nix;
