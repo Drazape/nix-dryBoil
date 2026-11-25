@@ -1,31 +1,5 @@
 {
   "nodes": {
-    "material-bibata-cursor-Dark": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1790087868,
-        "narHash": "sha256-qRZIG2wGEo6Qvg9+99QSyLKmCfHGsl3DpblF7/+cH4Y=",
-        "type": "tarball",
-        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz"
-      }
-    },
-    "material-bibata-cursor-Light": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1790087891,
-        "narHash": "sha256-eb9rBKE4lIqET4a7VgHxDqWHJy064+qdVVanaQAMTic=",
-        "type": "tarball",
-        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-light-v1.5.0.tar.gz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-light-v1.5.0.tar.gz"
-      }
-    },
     "chromaleon": {
       "flake": false,
       "locked": {
@@ -71,11 +45,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795514948,
-        "narHash": "sha256-r9fB1/5+RrZ1vjekEX3bZdg5aIwjP4AjkMzdBoEvPu4=",
+        "lastModified": 1795597191,
+        "narHash": "sha256-hKlxg0r01eccrNpYjRK2OHadoowwk7kPmFpuwYeYkik=",
         "owner": "Drazape",
         "repo": "fish-awabbre",
-        "rev": "bceeb6a7959c9803197513c0b0bf449c8621481e",
+        "rev": "71cd763e1819910ea06a4a6958ae982f9a552d02",
         "type": "github"
       },
       "original": {
@@ -94,11 +68,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795418672,
-        "narHash": "sha256-wojJbUp2gngMw621OZXIWttuKsklHLKLWj0bK9NPHOU=",
+        "lastModified": 1795537028,
+        "narHash": "sha256-m+6zIOZetDq0vtcgSJ9m1rmIyV52VwvnCBF8Dbybejo=",
         "owner": "Drazape",
         "repo": "fish-format",
-        "rev": "7ba90af9a96936fedff0bffadbb98ca10b00d8e6",
+        "rev": "8abc8818cc875181c2a237c848483a6d33d63abd",
         "type": "github"
       },
       "original": {
@@ -133,11 +107,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794827315,
-        "narHash": "sha256-bQ/oZSdVXxzc5Y22m6CS5GZ4XMBQAJFKDiZRacmbSpQ=",
+        "lastModified": 1795537110,
+        "narHash": "sha256-ZMAgfjh92ieDYYBEz5V3UPmcobIJzvZ+VncPh4ZwQx8=",
         "owner": "Drazape",
         "repo": "fish-helpText",
-        "rev": "1ba1150af3299f98b549f48df4ffcafe97cadb66",
+        "rev": "291f5638bd6612f9debb3b43892b7f541fe9f55d",
         "type": "github"
       },
       "original": {
@@ -179,11 +153,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794827315,
-        "narHash": "sha256-Ir22MvfX1a6xpfzsxLcMNoosXci18RLKtRO8MICD0k0=",
+        "lastModified": 1795537111,
+        "narHash": "sha256-k9w8LxSrnqpYhsbLUMdNttVIYOFtPq7lwWgtFf+sXxw=",
         "owner": "Drazape",
         "repo": "fish-nixenv",
-        "rev": "c9ec12c25c63c61b6802710d84a25bee162dc92e",
+        "rev": "802b3c2f0a62263db871f1a2db442e13cddd1977",
         "type": "github"
       },
       "original": {
@@ -236,6 +210,32 @@
       "original": {
         "type": "file",
         "url": "https://github.com/xob0t/gotohp/releases/latest/download/gotohp_amd64.deb"
+      }
+    },
+    "material-bibata-cursor-Dark": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790087868,
+        "narHash": "sha256-qRZIG2wGEo6Qvg9+99QSyLKmCfHGsl3DpblF7/+cH4Y=",
+        "type": "tarball",
+        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz"
+      }
+    },
+    "material-bibata-cursor-Light": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790087891,
+        "narHash": "sha256-eb9rBKE4lIqET4a7VgHxDqWHJy064+qdVVanaQAMTic=",
+        "type": "tarball",
+        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-light-v1.5.0.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-light-v1.5.0.tar.gz"
       }
     },
     "mosaic-wm": {
@@ -319,8 +319,6 @@
     },
     "root": {
       "inputs": {
-        "material-bibata-cursor-Dark": "material-bibata-cursor-Dark",
-        "material-bibata-cursor-Light": "material-bibata-cursor-Light",
         "chromaleon": "chromaleon",
         "chromaleon-preload": "chromaleon-preload",
         "fish-awabbre": "fish-awabbre",
@@ -332,6 +330,8 @@
         "flake-parts": "flake-parts",
         "gnome-improved-media-controls": "gnome-improved-media-controls",
         "gotohp": "gotohp",
+        "material-bibata-cursor-Dark": "material-bibata-cursor-Dark",
+        "material-bibata-cursor-Light": "material-bibata-cursor-Light",
         "mosaic-wm": "mosaic-wm",
         "nixpkgs": "nixpkgs",
         "nvidia-470xx": "nvidia-470xx",
