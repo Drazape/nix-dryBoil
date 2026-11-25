@@ -7,8 +7,8 @@ The following sections describe package overrides and implementation details for
 ## Package Overrides
 You can [override the package](https://ryantm.github.io/nixpkgs/using/overrides/ "Unofficial bookpage for Nixkpkgs overrides") to customize the components that are installed.
 
-| Name | Values | Default |
-| :------: | :----: | :-----: |
+| Name | Possible Values | Default |
+| :--: | :-------------: | :-----: |
 | [`theme`](#Theme-Selection) | `Dark`, `Light` | `Light` |
 | [`variants`](#Limiting-Variants) | see [definition][variants-definition] | all |
 | [`formats`](#Rendering-Format) | `standard`, `hypr` | `standard` |
