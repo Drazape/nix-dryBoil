@@ -36,7 +36,7 @@
 	meta = {
 		description = "Change your GNOME Shell and GTK accent colors dynamically based on your wallpaper";
 		homepage = "https://github.com/Fabito02/ChromaLeon";
-		license = lib.licenses.gpl3;
+		license = lib.licenses.gpl3Plus;
 		platforms = lib.platforms.linux;
 	};
 }		 

@@ -62,7 +62,7 @@
 		meta = {
 			description = "28 Bibata cursor themes, colored using Material Design 3's tonal system";
 			homepage = "https://github.com/SakibShahariar/material-bibata-cursor";
-			license = lib.licenses.gpl3;
+			license = lib.licenses.gpl3Plus;
 			platforms = lib.platforms.linux;
 		};
 }
