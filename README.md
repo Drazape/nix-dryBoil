@@ -11,6 +11,7 @@ inputs = {
 	…
 	dryboil = {
 		type="github"; owner="drazape"; repo="dryBoil";
+		ref = "alpha"; # most up-to-date packages
 		inputs.nixpkgs.follows = "nixpkgs"; # optional
 	};
 	…
