@@ -74,4 +74,4 @@ environment.systemPackages = [
 The package uses flake `inputs` to get the pre-build release assets from upstream
 
 
-[variants-definition]: ./default.nix#L10 "A list of variant names from the pkg source"
+[variants-definition]: ./default.nix#L7 "A list of variant names from the pkg source"
