@@ -2,7 +2,7 @@
 	inputs,
 	pkgs,
 	lib,
-	format ? ["standard"],
+	formats ? ["standard"],
 	variants ? [
 		"Apricot"
 		"Beige"
@@ -40,7 +40,7 @@
 
 		configurePhase = builtins.concatStringsSep "\n" <| lib.attrsets.mapAttrsToList
 				(formatName: fileNames: ''
-						if ${if builtins.elem formatName format
+						if ${if builtins.elem formatName formats
 								then "false"
 								else "true"}
 						then ${lib.meta.getExe' pkgs.coreutils "rm"} --recursive --force -- ./Bibata-Material-*-${theme}/{${builtins.concatStringsSep "," fileNames}}

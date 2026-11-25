@@ -4,7 +4,8 @@ dryBoil mono-repo with practical packages and modules
 > The repository is currently in alpha
 
 # Installation Instructions
-1. Add the input to your `flake.nix`
+## 1. Add input
+Add `dryboil` as an input to your `flake.nix`
 ```nix
 inputs = {
 	…
@@ -17,7 +18,8 @@ inputs = {
 …
 ```
 
-2. Simply install the package you want to install in your system environment from the added input in a module.
+## 2. Install package
+Simply install the package you want to install in your system environment from the added input in a module
 ```nix
 environment.systemPackages = [
 	…
@@ -26,4 +28,5 @@ environment.systemPackages = [
 ];
 ```
 
-
+> [!TIP]
+> See a package's Readme for special instructions, and refer [package names from the flake](./flake.nix#L99)

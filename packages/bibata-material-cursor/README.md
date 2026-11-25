@@ -1,37 +1,70 @@
 # Bibata Material Cursors
 The following sections describe package overrides and implementation details for [Bibata Material Cursor](https://github.com/SakibShahariar/material-bibata-cursor/)
 
+> [!TIP]
+> To install the package `bibata-material-cursor`, see [Installation Instructions](../../README.md#Installation-Instructions)
+
 ## Package Overrides
+You can [override the package](https://ryantm.github.io/nixpkgs/using/overrides/) to customize the components that are installed.
+
 | Name | Values | Default |
 | :------: | :----: | :-----: |
 | [`theme`](#Theme-Selection) | `Dark`, `Light` | `Light` |
 | [`variants`](#Limiting-Variants) | see [definition][variants-definition] | all |
-| [`format`](#Rendering-Format) | `standard`, `hypr` | `standard` |
+| [`formats`](#Rendering-Format) | `standard`, `hypr` | `standard` |
 
-### Theme Selection
+Example override usage:
+```nix
+environment.systemPackages = [
+  …
+  (inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.bibata-material-cursors.override {
+      theme = "Dark";
+      variants = ["Pink-Pastel"];
+      formats = [ "standard" "hypr" ];
+  })
+  …
+];
+```
+
+### Theme Selections
 You can select the theme the package installs (`Dark`, `Light`) using the `theme` override
 
 **Default**: `Light`
-```diff
-- inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default
-+ (inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default.override {theme="Dark";})
+```nix
+environment.systemPackages = [
+  …
+  (inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.bibata-material-cursors.override {
+      theme = "Dark";
+  })
+  …
+];
 ```
 ### Limiting Variants
 By default, the package installs all the [cursor variants](https://github.com/SakibShahariar/material-bibata-cursor#themes "Preview of custom variants").  
 You can select which cursor variants to install by specifying the [variant names][variants-definition] with the override option `variants`.
 
 **Default**: all
-```diff
-- inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default
-+ (inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default.override {variants=[<variant>…];})
+```nix
+environment.systemPackages = [
+  …
+  (inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.bibata-material-cursors.override {
+      variants = [ "Deap-Blue" "Teal" ];
+  })
+  …
+];
 ```
-### Rendering Format
+### Rendering Formats
 You can specify the formats (`standard`, `hypr`) that are supported by the compositors that you use in the `format` override list.
 
 **Default**: `standard`
-```diff
-- inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default
-+ (inputs.bibata-material-cursors.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default.override {format=[<format>…];})
+```nix
+environment.systemPackages = [
+  …
+  (inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.bibata-material-cursors.override {
+      formats = ["hypr"];
+  })
+  …
+];
 ```
 
 > [!TIP]
