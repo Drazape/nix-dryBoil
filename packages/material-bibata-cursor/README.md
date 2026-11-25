@@ -48,7 +48,7 @@ You can select which cursor variants to install by specifying the [variant names
 environment.systemPackages = [
   …
   (inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.material-bibata-cursor.override {
-      variants = [ "Deap-Blue" "Teal" ];
+      variants = [ "Deep-Blue" "Teal" ];
   })
   …
 ];
