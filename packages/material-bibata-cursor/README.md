@@ -2,10 +2,10 @@
 The following sections describe package overrides and implementation details for [Material Bibata Cursor](https://github.com/SakibShahariar/material-bibata-cursor/ "Upstream GitHub repository")
 
 > [!TIP]
-> To install the package `material-bibata-cursor`, see [Installation Instructions](../../README.md#Installation-Instructions)
+> To install the package `material-bibata-cursor`, see [Installation Instructions](../../README.md#Installation-Instructions "Installation instructions in the root Readme")
 
 ## Package Overrides
-You can [override the package](https://ryantm.github.io/nixpkgs/using/overrides/) to customize the components that are installed.
+You can [override the package](https://ryantm.github.io/nixpkgs/using/overrides/ "Unofficial bookpage for Nixkpkgs overrides") to customize the components that are installed.
 
 | Name | Values | Default |
 | :------: | :----: | :-----: |
