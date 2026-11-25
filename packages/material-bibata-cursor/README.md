@@ -16,13 +16,13 @@ You can [override the package](https://ryantm.github.io/nixpkgs/using/overrides/
 Example override usage:
 ```nix
 environment.systemPackages = [
-  …
-  (inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.material-bibata-cursor.override {
-      theme = "Dark";
-      variants = ["Pink-Pastel"];
-      formats = [ "standard" "hypr" ];
-  })
-  …
+	…
+	(inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.material-bibata-cursor.override {
+		theme = "Dark";
+		variants = ["Pink-Pastel"];
+		formats = [ "standard" "hypr" ];
+	})
+	…
 ];
 ```
 
@@ -32,25 +32,25 @@ You can select the theme the package installs (`Dark`, `Light`) using the `theme
 **Default**: `Light`
 ```nix
 environment.systemPackages = [
-  …
-  (inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.material-bibata-cursor.override {
-      theme = "Dark";
-  })
-  …
+	…
+	(inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.material-bibata-cursor.override {
+			theme = "Dark";
+	})
+	…
 ];
 ```
 ### Limiting Variants
-By default, the package installs all the [cursor variants](https://github.com/SakibShahariar/material-bibata-cursor#themes "Preview of custom variants").  
+By default, the package installs all the [cursor variants](https://github.com/SakibShahariar/material-bibata-cursor#themes "Preview of custom variants").	
 You can select which cursor variants to install by specifying the [variant names][variants-definition] with the override option `variants`.
 
 **Default**: all
 ```nix
 environment.systemPackages = [
-  …
-  (inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.material-bibata-cursor.override {
-      variants = [ "Deep-Blue" "Teal" ];
-  })
-  …
+	…
+	(inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.material-bibata-cursor.override {
+		variants = [ "Deep-Blue" "Teal" ];
+	})
+	…
 ];
 ```
 ### Rendering Formats
@@ -59,11 +59,11 @@ You can specify the formats (`standard`, `hypr`) that are supported by the compo
 **Default**: `standard`
 ```nix
 environment.systemPackages = [
-  …
-  (inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.material-bibata-cursor.override {
-      formats = ["hypr"];
-  })
-  …
+	…
+	(inputs.dryboil.packages.${pkgs.stdenvNoCC.hostPlatform.system}.material-bibata-cursor.override {
+		formats = ["hypr"];
+	})
+	…
 ];
 ```
 
