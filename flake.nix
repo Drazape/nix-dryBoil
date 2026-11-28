@@ -50,6 +50,11 @@
 			flake = false;
 		};
 
+		anilist-gtk = {
+			type="github"; owner="lunananananananana"; repo="AniList-GTK";
+			flake = false;
+		};
+
 		fish-awabbre = {
 			type="github"; owner="Drazape"; repo="fish-awabbre";
 			inputs = {
@@ -102,6 +107,7 @@
 						gotohp = ./packages/gotohp.nix;
 						mosaic-wm-gnome-extension = ./packages/mosaic-wm.nix;
 						fish-hashmap = ./packages/fish-hashmap.nix;
+						anilist-gtk = ./packages/anilist-gtk;
 						nvidia-470-driver = ./packages/nvidia-470-driver.nix;
 					})
 					# external

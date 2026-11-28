@@ -1,0 +1,292 @@
+diff --git a/data/ch.laurinneff.AniList-GTK.gschema.xml b/data/ch.laurinneff.AniList-GTK.gschema.xml
+index b3e1a64..8c74d44 100644
+--- a/data/ch.laurinneff.AniList-GTK.gschema.xml
++++ b/data/ch.laurinneff.AniList-GTK.gschema.xml
+@@ -1,6 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <schemalist gettext-domain="anilist-gtk">
+ 	<schema id="ch.laurinneff.AniList-GTK" path="/ch/laurinneff/AniList-GTK/">
++	  <key name="client-id" type="s">
++	    <default>'5986'</default>
++	    <summary>AniList OAuth client ID</summary>
++	    <description>The client ID of the AniList application used for authentication. Create an application at https://anilist.co/settings/developer with the redirect URL https://anilist.co/api/v2/oauth/pin.</description>
++	  </key>
+ 	  <key name="sort-by" type="s">
+ 	    <default>'alpha'</default>
+ 	    <summary>How lists are sorted</summary>
+diff --git a/data/resources/ui/LoginWindow.ui b/data/resources/ui/LoginWindow.ui
+index fea22c5..c4ca9d6 100644
+--- a/data/resources/ui/LoginWindow.ui
++++ b/data/resources/ui/LoginWindow.ui
+@@ -21,9 +21,50 @@
+           </object>
+         </child>
+         <child>
+-          <object class="GtkButton">
+-            <property name="label">Open Browser</property>
+-            <signal name="clicked" handler="open_browser_login"/>
++          <object class="GtkBox">
++            <property name="orientation">vertical</property>
++            <property name="spacing">12</property>
++            <property name="margin-top">24</property>
++            <property name="margin-bottom">24</property>
++            <property name="margin-start">24</property>
++            <property name="margin-end">24</property>
++            <child>
++              <object class="GtkLabel">
++                <property name="label" translatable="true">Create an AniList application with the redirect URL https://anilist.co/api/v2/oauth/pin, then enter its client ID below. Open the authorization page and paste the token you receive.</property>
++                <property name="wrap">true</property>
++                <property name="max-width-chars">50</property>
++                <property name="xalign">0</property>
++              </object>
++            </child>
++            <child>
++              <object class="GtkLinkButton">
++                <property name="label" translatable="true">AniList developer settings</property>
++                <property name="uri">https://anilist.co/settings/developer</property>
++              </object>
++            </child>
++            <child>
++              <object class="GtkEntry" id="client_id_entry">
++                <property name="placeholder-text" translatable="true">Client ID</property>
++              </object>
++            </child>
++            <child>
++              <object class="GtkButton">
++                <property name="label" translatable="true">Open Authorization Page</property>
++                <signal name="clicked" handler="open_browser_login"/>
++              </object>
++            </child>
++            <child>
++              <object class="GtkEntry" id="token_entry">
++                <property name="placeholder-text" translatable="true">Access token</property>
++                <property name="visibility">false</property>
++              </object>
++            </child>
++            <child>
++              <object class="GtkButton">
++                <property name="label" translatable="true">Save Token</property>
++                <signal name="clicked" handler="save_token"/>
++              </object>
++            </child>
+           </object>
+         </child>
+       </object>
+diff --git a/data/resources/ui/MainWindow.ui b/data/resources/ui/MainWindow.ui
+index 1142977..bc5527e 100644
+--- a/data/resources/ui/MainWindow.ui
++++ b/data/resources/ui/MainWindow.ui
+@@ -19,7 +19,7 @@
+                   <object class="GtkToggleButton">
+                     <property name="icon-name">sidebar-toggle-left-symbolic</property>
+                     <property name="tooltip-text">Toggle sidebar</property>
+-                    <property name="active" bind-source="flap" bind-property="reveal-flap" bind-flags="sync-create|bidirectional"/>
++                    <property name="active" bind-source="flap" bind-property="show-sidebar" bind-flags="sync-create|bidirectional"/>
+                   </object>
+                 </child>
+               </object>
+@@ -83,9 +83,8 @@
+               <object class="GtkStackPage">
+                 <property name="name">main</property>
+                 <property name="child">
+-                  <object class="AdwFlap" id="flap">
+-                    <property name="modal">true</property>
+-                    <child type="flap">
++                  <object class="AdwOverlaySplitView" id="flap">
++                    <child type="sidebar">
+                       <object class="GtkStackSidebar" id="sidebar">
+                         <property name="width-request">200</property>
+                         <property name="css-classes">background</property>
+diff --git a/src/AnilistClient.vala b/src/AnilistClient.vala
+index f602c55..053d309 100644
+--- a/src/AnilistClient.vala
++++ b/src/AnilistClient.vala
+@@ -130,9 +130,9 @@ namespace AnilistGtk {
+ 
+         public async Json.Object? graphql_request(string graphql, Json.Object variables) {
+             var msg = new Soup.Message("POST", API_URL);
+-            msg.request_headers.append("Authorization", @"Bearer $anilist_token");
+-            msg.request_headers.append("Content-Type", "application/json");
+-            msg.request_headers.append("Accept", "application/json");
++            msg.get_request_headers().append("Authorization", @"Bearer $anilist_token");
++            msg.get_request_headers().append("Content-Type", "application/json");
++            msg.get_request_headers().append("Accept", "application/json");
+ 
+             var gen = new Json.Generator();
+             { // Generate JSON inside of a block so that the same variable names can be used for generating and parsing
+@@ -147,12 +147,12 @@ namespace AnilistGtk {
+ 
+             var json = gen.to_data(null);
+             debug("Sending request with data %s", json);
+-            msg.request_body.append_take(json.data);
++            msg.set_request_body_from_bytes("application/json", new GLib.Bytes(json.data));
+ 
+             var parser = new Json.Parser();
+ 
+             try {
+-                var stream = yield session.send_async(msg);
++                var stream = yield session.send_async(msg, GLib.Priority.DEFAULT, null);
+                 var dis = new DataInputStream(stream);
+                 var data = yield dis.read_upto_async("\0", 1, Priority.DEFAULT, null, null);
+                 debug("Got response from AniList: %s", data);
+diff --git a/src/AnilistGtkApp.vala b/src/AnilistGtkApp.vala
+index 5ec304f..8ed26e9 100644
+--- a/src/AnilistGtkApp.vala
++++ b/src/AnilistGtkApp.vala
+@@ -101,10 +101,7 @@ namespace AnilistGtk {
+ 
+                         client.store_token.begin (params.get("access_token"), (obj, res) => {
+                             client.store_token.end (res);
+-                            if(active_window is LoginWindow) {
+-                                active_window.close();
+-                                open_main_window();
+-                            }
++                            finish_login();
+                         });
+                     } catch(UriError e) {
+                         error("can't parse uri: %s", e.message);
+@@ -175,6 +172,13 @@ namespace AnilistGtk {
+             login_window.present();
+         }
+ 
++        public void finish_login() {
++            if(login_window != null) {
++                login_window.close();
++            }
++            open_main_window();
++        }
++
+         protected void open_main_window() {
+             if(main_window == null) {
+                 main_window = new MainWindow(this);
+diff --git a/src/LoginWindow.vala b/src/LoginWindow.vala
+index 4aaaf88..1c1ca04 100644
+--- a/src/LoginWindow.vala
++++ b/src/LoginWindow.vala
+@@ -23,18 +23,45 @@ namespace AnilistGtk {
+     public class LoginWindow : Adw.ApplicationWindow {
+         AnilistGtkApp app;
+ 
++        [GtkChild]
++        private unowned Gtk.Entry client_id_entry;
++
++        [GtkChild]
++        private unowned Gtk.Entry token_entry;
++
+ 		public LoginWindow(AnilistGtkApp app) {
+ 			Object (application: app);
+ 		    this.app = app;
++            client_id_entry.text = app.settings.get_string("client-id");
+ 		}
+ 
+         [GtkCallback]
+ 		public void open_browser_login() {
++            var client_id = client_id_entry.text.strip();
++            if(client_id == "") {
++                client_id = "5986";
++            }
++            app.settings.set_string("client-id", client_id);
++
++            var uri = @"https://anilist.co/api/v2/oauth/authorize?client_id=$client_id&response_type=token";
+ 		    try {
+-                AppInfo.launch_default_for_uri(AnilistClient.OAUTH_URI, null);
++                AppInfo.launch_default_for_uri(uri, null);
+             } catch(Error e) {
+                 error(e.message);
+             }
+ 		}
++
++        [GtkCallback]
++        public void save_token() {
++            var token = token_entry.text.strip();
++            if(token == "") {
++                return;
++            }
++
++            app.client.store_token.begin(token, (obj, res) => {
++                app.client.store_token.end(res);
++                app.finish_login();
++            });
++        }
+     }
+ }
+diff --git a/src/MainWindow.vala b/src/MainWindow.vala
+index 064faa0..dfd8625 100644
+--- a/src/MainWindow.vala
++++ b/src/MainWindow.vala
+@@ -24,7 +24,7 @@ namespace AnilistGtk {
+ 	    [GtkChild]
+ 	    private unowned Adw.ViewStack main_stack;
+ 	    [GtkChild]
+-	    private unowned Adw.Flap flap;
++	    private unowned Adw.OverlaySplitView flap;
+ 	    [GtkChild]
+ 	    private unowned Gtk.Stack anime_stack;
+ 	    [GtkChild]
+@@ -68,10 +68,10 @@ namespace AnilistGtk {
+             sidebar.stack = (Gtk.Stack) main_stack.visible_child;
+ 
+             anime_stack.notify["visible-child"].connect(() => {
+-                if(flap.folded) flap.reveal_flap = false;
++                if(flap.collapsed) flap.show_sidebar = false;
+             });
+             manga_stack.notify["visible-child"].connect(() => {
+-                if(flap.folded) flap.reveal_flap = false;
++                if(flap.collapsed) flap.show_sidebar = false;
+             });
+ 
+             search_button.notify["active"].connect(() => {
+@@ -172,19 +172,23 @@ namespace AnilistGtk {
+                 var selection_model = new Gtk.NoSelection(sort_model);
+ 
+                 var factory = new Gtk.SignalListItemFactory();
+-                factory.setup.connect((listitem) => {
++                factory.setup.connect((obj) => {
++                    var listitem = (Gtk.ListItem) obj;
+                     var media_list_entry_widget = new MediaListEntryWidget();
+                     listitem.child = media_list_entry_widget;
+                 });
+-                factory.teardown.connect((listitem) => {
++                factory.teardown.connect((obj) => {
++                    var listitem = (Gtk.ListItem) obj;
+                     listitem.child.destroy();
+                     listitem.child = null;
+                 });
+-                factory.bind.connect((listitem) => {
++                factory.bind.connect((obj) => {
++                    var listitem = (Gtk.ListItem) obj;
+                     var media_list_entry_widget = (MediaListEntryWidget) listitem.child;
+                     media_list_entry_widget.setup.begin((MediaListEntry) listitem.item);
+                 });
+-                factory.unbind.connect((listitem) => {
++                factory.unbind.connect((obj) => {
++                    var listitem = (Gtk.ListItem) obj;
+                     var media_list_entry_widget = (MediaListEntryWidget) listitem.child;
+                     media_list_entry_widget.teardown.begin();
+                 });
+diff --git a/src/MediaListEntryWidget.vala b/src/MediaListEntryWidget.vala
+index 3d548a6..5c21380 100644
+--- a/src/MediaListEntryWidget.vala
++++ b/src/MediaListEntryWidget.vala
+@@ -92,7 +92,7 @@ namespace AnilistGtk {
+                 var session = AnilistGtkApp.instance.client.session;
+                 var msg = new Soup.Message("GET", cover_url);
+                 try {
+-                    var stream = yield session.send_async(msg);
++                    var stream = yield session.send_async(msg, GLib.Priority.DEFAULT, null);
+                     cover_pixbuf = yield new Gdk.Pixbuf.from_stream_async(stream);
+                     cover_pixbuf.save(cover_file.get_path(), "png");
+                 } catch(Error err) {
+diff --git a/src/meson.build b/src/meson.build
+index 495a381..cd1eba2 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -41,7 +41,7 @@ anilist_gtk_deps = [
+   libadwaita_dep,
+   dependency('libsecret-1', version: '>= 0.20.4'),
+   dependency('json-glib-1.0', version: '>= 1.6.2'),
+-  dependency('libsoup-2.4', version: '>= 2.72.0'),
++  dependency('libsoup-3.0', version: '>= 3.0.0'),
+   dependency('gee-0.8', version: '>= 0.20.4'),
+ ]
+ 
